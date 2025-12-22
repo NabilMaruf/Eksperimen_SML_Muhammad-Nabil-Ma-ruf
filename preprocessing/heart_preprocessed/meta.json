@@ -1,0 +1,34 @@
+{
+  "target_col": "target",
+  "test_size": 0.2,
+  "random_state": 42,
+  "numeric_cols": [
+    "age",
+    "trestbps",
+    "chol",
+    "thalach",
+    "oldpeak"
+  ],
+  "categorical_cols": [
+    "sex",
+    "cp",
+    "fbs",
+    "restecg",
+    "exang",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "n_features_after": 30,
+  "n_rows_after_drop_duplicates": 302,
+  "train_rows": 241,
+  "test_rows": 61,
+  "class_balance_train": {
+    "1": 131,
+    "0": 110
+  },
+  "class_balance_test": {
+    "1": 33,
+    "0": 28
+  }
+}
