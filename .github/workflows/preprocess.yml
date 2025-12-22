@@ -3,7 +3,7 @@ name: Preprocess Dataset (Kriteria 1 - Advance)
 on:
   push:
     paths:
-      - "namadataset_raw/**"
+      - "heart.csv**"
       - "preprocessing/**"
       - ".github/workflows/preprocess.yml"
   workflow_dispatch:
@@ -25,9 +25,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas scikit-learn joblib
 
-      - name: Run preprocessing script
+      - name: Run preprocessing
         run: |
-          python preprocessing/automate_Nabil.py --input namadataset_raw/heart.csv --output preprocessing/heart_preprocessed --test-size 0.2 --random-state 42
+          python preprocessing/automate_Nabil.py \
+            --input heart.csv \
+            --output preprocessing/heart_preprocessed \
+            --test-size 0.2 \
+            --random-state 42
 
       - name: Upload preprocessed dataset as artifact
         uses: actions/upload-artifact@v4
